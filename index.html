@@ -22,11 +22,9 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
-          <polygon points="16,2 30,28 2,28" stroke="currentColor" stroke-width="2" fill="none"/>
-          <polygon points="16,10 24,24 8,24" fill="currentColor"/>
-        </svg>
-        <span class="logo-text">APEX<span class="logo-sub">SIM RACING</span></span>
+        <div class="disc-car-img">
+          <img src="assets/logotipo.png" alt="logoapex" />
+        </div>
       </a>
 
       <nav class="nav-links">
@@ -39,7 +37,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#" class="btn-pill magnetic">Reservar Sesión</a>
+        <a href="#" class="btn-pill magnetic">Unirme a la Academia</a>
         <button class="nav-burger" id="burgerBtn" aria-label="Menu">
           <span></span><span></span>
         </button>
@@ -56,7 +54,7 @@
       <a href="#esports">Esports</a>
       <a href="#comunidad">Comunidad</a>
       <a href="#empresas">Empresas</a>
-      <a href="#" class="btn-pill">Reservar Sesión</a>
+      <a href="#" class="btn-pill">Unirme a la Academia</a>
     </nav>
   </div>
 
@@ -73,31 +71,14 @@
         <span class="title-line accent" data-speed="0.6">NO JUGADORES.</span>
       </h1>
 
-      <p class="hero-desc">Entrenamiento profesional con simuladores de alto nivel,<br>telemetría y coaching experto. Aquí se viene a entrenar, no a jugar.</p>
+      <p class="hero-desc">Entrenamiento profesional con simuladores de alto nivel,<br>telemetría y coaching experto. Aquí se viene a entrenar, <br>no a jugar.</p>
 
       <div class="hero-cta-row">
         <a href="#" class="btn-primary magnetic">
-          <span>Reservar Sesión</span>
+          <span>Unirme a la Academia</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#" class="btn-ghost magnetic">Ver Academia</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num" data-count="500">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Pilotos activos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-count="4">0</span>
-          <span class="stat-label">Programas</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-count="3">0</span>
-          <span class="stat-label">Ligas activas</span>
-        </div>
       </div>
     </div>
 
@@ -157,7 +138,7 @@
         <div class="program-card" data-index="01">
           <div class="card-num">01</div>
           <div class="card-tag" style="color:#00E5FF">FUNDAMENTOS</div>
-          <h3>NIVEL<br>INICIAL</h3>
+          <h3>NIVEL INICIAL</h3>
           <ul>
             <li>9 módulos</li>
             <li>10 horas</li>
@@ -214,7 +195,7 @@
     <div class="disc-sticky">
       <div class="disc-left">
         <span class="section-tag">— DISCIPLINAS</span>
-        <h2 class="section-title">ENTRENÁ EN<br>TODAS LAS<br><em>DISCIPLINAS</em></h2>
+        <h2 class="disc-title">ENTRENÁ EN<br>TODAS LAS<br><em>DISCIPLINAS</em></h2>
         <a href="#" class="link-arrow">EXPLORAR <span>→</span></a>
       </div>
       <div class="disc-scroll-area" id="discScroll">
@@ -225,6 +206,9 @@
               <h3>F1</h3>
               <p>Fórmula 1 de simulación. El pináculo de la tecnología y la velocidad.</p>
               <div class="disc-line"></div>
+              <div class="disc-car-img">
+                <img src="assets/auto1.png" alt="F1" />
+              </div>
             </div>
           </div>
           <div class="disc-card" style="--accent:#00E5FF">
@@ -233,6 +217,9 @@
               <h3>GT3</h3>
               <p>Gran turismo. Equilibrio perfecto entre potencia y manejabilidad.</p>
               <div class="disc-line"></div>
+              <div class="disc-car-img">
+                <img src="assets/auto2.png" alt="GT3" />
+              </div>
             </div>
           </div>
           <div class="disc-card" style="--accent:#FF3D00">
@@ -241,6 +228,9 @@
               <h3>RALLY</h3>
               <p>Tierra, asfalto y nieve. Domina cada superficie.</p>
               <div class="disc-line"></div>
+              <div class="disc-car-img">
+                <img src="assets/auto5.png" alt="Rally" />
+              </div>
             </div>
           </div>
           <div class="disc-card" style="--accent:#69F0AE">
@@ -249,6 +239,9 @@
               <h3>ENDURANCE</h3>
               <p>Resistencia y estrategia. Las 24 horas más exigentes del sim.</p>
               <div class="disc-line"></div>
+              <div class="disc-car-img">
+                <img src="assets/auto3.png" alt="Endurance" />
+              </div>
             </div>
           </div>
           <div class="disc-card" style="--accent:#FFD600">
@@ -257,6 +250,9 @@
               <h3>TURISMO<br>CARRETERA</h3>
               <p>La escuela argentina del automovilismo, en simulación.</p>
               <div class="disc-line"></div>
+              <div class="disc-car-img">
+                <img src="assets/auto4.png" alt="Turismo Carretera" />
+              </div>
             </div>
           </div>
         </div>
@@ -266,7 +262,7 @@
 
   <!-- ═══ HARDWARE ═══ -->
   <section class="section hardware-section" id="simuladores">
-    <div class="section-inner">
+    <div class="section-inner hardware-layout">
       <div class="hw-header">
         <span class="section-tag">— EQUIPAMIENTO</span>
         <h2 class="section-title">HARDWARE<br><em>PROFESIONAL</em></h2>
@@ -278,6 +274,7 @@
         <div class="hw-brand magnetic" data-brand="SIMUCUBE">
           <div class="hw-brand-inner">
             <span class="hw-brand-name">SIMUCUBE</span>
+            <img src="assets/simucube.png" alt="SIMUCUBE" />
             <span class="hw-brand-tag">DIRECT DRIVE</span>
           </div>
           <div class="hw-brand-line"></div>
@@ -285,6 +282,7 @@
         <div class="hw-brand magnetic" data-brand="HEUSINKVELD">
           <div class="hw-brand-inner">
             <span class="hw-brand-name">HEUSINKVELD</span>
+            <img src="assets/heusinkveld.png" alt="HEUSINKVELD" />
             <span class="hw-brand-tag">PEDALES ULTIMATE+</span>
           </div>
           <div class="hw-brand-line"></div>
@@ -292,6 +290,7 @@
         <div class="hw-brand magnetic" data-brand="FANATEC">
           <div class="hw-brand-inner">
             <span class="hw-brand-name">FANATEC</span>
+            <img src="assets/fanatec.png" alt="FANATEC" />
             <span class="hw-brand-tag">COCKPITS DE ALUMINIO</span>
           </div>
           <div class="hw-brand-line"></div>
@@ -299,6 +298,7 @@
         <div class="hw-brand magnetic" data-brand="MOZA">
           <div class="hw-brand-inner">
             <span class="hw-brand-name">MOZA</span>
+            <img src="assets/moza.png" alt="MOZA" />
             <span class="hw-brand-tag">ACTUADORES 3DOF</span>
           </div>
           <div class="hw-brand-line"></div>
@@ -315,8 +315,7 @@
         <span class="reveal-word">ENTRÁS</span>
         <span class="reveal-word">SOLO.</span>
         <br>
-        <span class="reveal-word">ENTRÁS</span>
-        <span class="reveal-word">CON</span>
+        <span class="reveal-word">ENTRÁS CON</span>
         <span class="reveal-word accent">OTROS.</span>
       </h2>
       <div class="community-sub">
@@ -328,11 +327,9 @@
       </div>
     </div>
     <div class="community-grid" id="communityGrid">
-      <div class="cg-cell" style="grid-area:a"></div>
-      <div class="cg-cell" style="grid-area:b"></div>
-      <div class="cg-cell" style="grid-area:c"></div>
-      <div class="cg-cell" style="grid-area:d"></div>
-      <div class="cg-cell" style="grid-area:e"></div>
+      <img src="assets/gallery1.jpg" alt="imagen galería 1" />
+      <img src="assets/gallery4.jpg" alt="imagen galería 2" />
+      <img src="assets/gallery5.jpg" alt="imagen galería 3" />
       <div class="cg-note">Aquí<br>empezaron<br>juntos. ✌</div>
     </div>
   </section>
@@ -484,11 +481,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
-            <polygon points="16,2 30,28 2,28" stroke="currentColor" stroke-width="2" fill="none"/>
-            <polygon points="16,10 24,24 8,24" fill="currentColor"/>
-          </svg>
-          <span class="logo-text">APEX<span class="logo-sub">SIM RACING</span></span>
+          <img src="assets/logotipofooter.png" alt="logoapexfinal" />
           <p class="footer-tagline">Entrenamos pilotos.<br>No jugadores.</p>
           <div class="footer-socials">
             <a href="#" aria-label="Instagram">IG</a>

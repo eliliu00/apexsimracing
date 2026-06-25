@@ -446,50 +446,130 @@ function initScrollReveal() {
 }
 
 /* ═══════════════════════════════════════════════════════
-   DRAG SCROLL — horizontal drag for disciplines row
+   DISC SCROLL — cursor-driven auto-scroll (desktop)
+                 native touch swipe (mobile)
 ═══════════════════════════════════════════════════════ */
 function initDragScroll() {
-  const el = $('#discScroll');
-  if (!el) return;
+  const section  = document.querySelector('.disc-section');
+  const el       = $('#discScroll');
+  const row      = el ? el.querySelector('.disc-cards-row') : null;
+  if (!section || !el || !row) return;
 
-  let isDown = false, startX, scrollLeft;
+  /* ── Skip on touch devices — CSS handles native scroll ── */
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (isTouch) {
+    initTouchSwipe(el);
+    return;
+  }
 
-  el.addEventListener('mousedown', e => {
-    isDown = true;
-    el.style.cursor = 'grabbing';
-    startX     = e.pageX - el.offsetLeft;
-    scrollLeft = el.scrollLeft;
-    e.preventDefault();
+  /* ── Desktop: cursor position → scrollLeft ── */
+
+  // Target and current scroll, smoothly interpolated each frame
+  let targetScroll  = 0;
+  let currentScroll = 0;
+  let isInSection   = false;   // only animate while cursor is over the section
+  let rafId         = null;
+
+  // Max scrollable distance
+  function maxScroll() {
+    return row.scrollWidth - el.clientWidth;
+  }
+
+  // Map cursor X (relative to section) to a scroll target
+  function cursorToScroll(clientX) {
+    const rect     = section.getBoundingClientRect();
+    // Normalise to [0, 1] with a small dead-zone at the edges
+    const MARGIN   = 0.08;   // 8% dead-zone on each side — title area stays calm
+    const rawT     = (clientX - rect.left) / rect.width;
+    const t        = clamp((rawT - MARGIN) / (1 - MARGIN * 2), 0, 1);
+    return t * maxScroll();
+  }
+
+  // Animate loop — runs only while cursor is inside the section
+  function tick() {
+    currentScroll = lerp(currentScroll, targetScroll, 0.055);  // silky ease
+    el.scrollLeft = currentScroll;
+
+    // Keep looping while drifting or still inside
+    if (isInSection || Math.abs(currentScroll - targetScroll) > 0.5) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function startTick() {
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  }
+
+  // Track cursor across the whole section (left panel + scroll area)
+  section.addEventListener('mousemove', e => {
+    targetScroll = cursorToScroll(e.clientX);
+    startTick();
+  }, { passive: true });
+
+  section.addEventListener('mouseenter', () => {
+    isInSection = true;
+    startTick();
   });
 
-  document.addEventListener('mouseup', () => {
-    isDown = false;
-    if (el) el.style.cursor = 'grab';
+  section.addEventListener('mouseleave', () => {
+    isInSection = false;
+    // Let the lerp coast to rest — tick will stop itself
   });
 
-  document.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    const x = e.pageX - el.offsetLeft;
-    el.scrollLeft = scrollLeft - (x - startX) * 1.2;
-  });
+  // Sync on resize
+  window.addEventListener('resize', () => {
+    currentScroll = clamp(currentScroll, 0, maxScroll());
+    targetScroll  = clamp(targetScroll,  0, maxScroll());
+    el.scrollLeft = currentScroll;
+  }, { passive: true });
 
-  // Touch support
-  let touchStartX, touchScrollLeft;
+  /* ── Subtle intro hint: drift right then back ── */
+  setTimeout(() => {
+    const max = maxScroll();
+    targetScroll = max * 0.18;
+    startTick();
+    setTimeout(() => { targetScroll = 0; startTick(); }, 900);
+  }, 1800);
+}
+
+/* ── Touch swipe for mobile ── */
+function initTouchSwipe(el) {
+  let startX = 0, startLeft = 0, velX = 0, lastX = 0, lastT = 0;
+  let rafId  = null;
+
   el.addEventListener('touchstart', e => {
-    touchStartX    = e.touches[0].pageX;
-    touchScrollLeft = el.scrollLeft;
+    startX    = e.touches[0].clientX;
+    startLeft = el.scrollLeft;
+    velX      = 0;
+    lastX     = startX;
+    lastT     = Date.now();
+    cancelAnimationFrame(rafId);
   }, { passive: true });
 
   el.addEventListener('touchmove', e => {
-    const dx = e.touches[0].pageX - touchStartX;
-    el.scrollLeft = touchScrollLeft - dx;
+    const now  = Date.now();
+    const x    = e.touches[0].clientX;
+    const dt   = now - lastT || 1;
+    velX       = (lastX - x) / dt;   // px/ms
+    el.scrollLeft = startLeft + (startX - x);
+    lastX = x;
+    lastT = now;
   }, { passive: true });
 
-  // Scroll hint pulse
-  setTimeout(() => {
-    el.scrollTo({ left: 60, behavior: 'smooth' });
-    setTimeout(() => el.scrollTo({ left: 0, behavior: 'smooth' }), 600);
-  }, 2000);
+  el.addEventListener('touchend', () => {
+    // Momentum flick
+    let momentum = velX * 120;   // project forward
+
+    function coast() {
+      if (Math.abs(momentum) < 0.5) return;
+      el.scrollLeft += momentum;
+      momentum *= 0.92;           // friction
+      rafId = requestAnimationFrame(coast);
+    }
+    coast();
+  }, { passive: true });
 }
 
 /* ═══════════════════════════════════════════════════════

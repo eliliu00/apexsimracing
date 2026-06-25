@@ -899,10 +899,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: flex-start;
   overflow: hidden;
-  transition: background 0.4s;
 }
-.hw-brand:hover { background: var(--bg3); }
-.hw-brand:hover .hw-brand-line { transform: scaleX(1); }
 
 .hw-brand-inner { 
   position: relative;
@@ -915,11 +912,10 @@ img { display: block; max-width: 100%; }
 
 .hw-brand img{
     width:100%;
-    aspect-ratio: 4 / 3; /* misma proporción en las 4, sin importar la foto original */
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     display:block;
     margin:28px 0;
-    transition:.45s ease;
 }
 
 .hw-brand-name {
@@ -942,14 +938,7 @@ img { display: block; max-width: 100%; }
 }
 
 .hw-brand-line {
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--white);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease);
+  display: none;
 }
 
 /* ═══ COMMUNITY ═══ */

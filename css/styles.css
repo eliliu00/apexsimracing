@@ -370,7 +370,7 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 2;
   padding: 0 60px;
-  max-width: 760px;
+  max-width: 1200px;
   padding-top: var(--nav-h);
 }
 
@@ -403,8 +403,13 @@ img { display: block; max-width: 100%; }
   transform: translateY(100%);
   opacity: 0;
   transition: transform 0.9s var(--ease), opacity 0.9s var(--ease);
+  /* CSS fallback: si el JS no dispara, el título aparece igual */
+  animation: titleFallback 0.01s 1.5s forwards;
 }
-.title-line.visible { transform: translateY(0); opacity: 1; }
+@keyframes titleFallback {
+  to { opacity: 1; transform: translateY(0); }
+}
+.title-line.visible { transform: translateY(0); opacity: 1; animation: none; }
 .title-line.accent {
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255,255,255,0.5);

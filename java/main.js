@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagnetic();
   initScrollReveal();
   initDragScroll();
-  initDisciplineArrows();
   initNewsletterForm();
   initReducedMotion();
 });
@@ -491,31 +490,6 @@ function initDragScroll() {
     el.scrollTo({ left: 60, behavior: 'smooth' });
     setTimeout(() => el.scrollTo({ left: 0, behavior: 'smooth' }), 600);
   }, 2000);
-}
-function initDisciplineArrows() {
-  console.log('FUNCION EJECUTADA');
-  const container = document.getElementById('discScroll');
-  const prev = document.getElementById('discPrev');
-  const next = document.getElementById('discNext');
-
-  if (!container || !prev || !next) return;
-
-  next.addEventListener('click', () => {
-    console.log('NEXT');
-    container.scrollBy({
-      left: 400,
-      behavior: 'smooth'
-    });
-  });
-
-  prev.addEventListener('click', () => {
-    console.log('PREV');
-    container.scrollBy({
-      left: -400,
-      behavior: 'smooth'
-    });
-  });
-
 }
 
 /* ═══════════════════════════════════════════════════════

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX Sim Racing Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-apex">APEX</span>
+        <span class="logo-sub">SIM RACING</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#">Academia</a>
+        <a href="#">Cursos</a>
+        <a href="#">Simuladores</a>
+        <a href="#">Esports</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Empresas</a>
+        <a href="#">Nosotros</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-cta">Reservar Sesión</a>
+        <button class="nav-burger" id="burgerBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Academia</a>
+      <a href="#">Cursos</a>
+      <a href="#">Simuladores</a>
+      <a href="#">Esports</a>
+      <a href="#">Comunidad</a>
+      <a href="#">Empresas</a>
+      <a href="#">Nosotros</a>
+      <a href="#" class="btn btn-cta">Reservar Sesión</a>
+    </div>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">APEX SIM RACING ACADEMY</p>
+      <h1 class="hero-headline">
+        ENTRENAMOS<br />
+        PILOTOS.<br />
+        <span class="hero-accent">NO JUGADORES.</span>
+      </h1>
+      <p class="hero-sub">
+        Entrenamiento profesional con simuladores<br />
+        de alto nivel, telemetría y coaching experto.<br />
+        Aquí se viene a entrenar, no a jugar.
+      </p>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-cta">Reservar Sesión</a>
+        <a href="#" class="btn btn-outline">Ver Academia</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="avatar-stack">
+          <img src="https://i.pravatar.cc/32?img=1" alt="pilot" />
+          <img src="https://i.pravatar.cc/32?img=2" alt="pilot" />
+          <img src="https://i.pravatar.cc/32?img=3" alt="pilot" />
+          <img src="https://i.pravatar.cc/32?img=4" alt="pilot" />
+        </div>
+        <span>+500 PILOTOS ENTRENANDO</span>
+      </div>
+    </div>
+
+    <!-- Telemetry HUD overlay -->
+    <div class="hero-hud">
+      <div class="hud-block hud-lap">
+        <div class="hud-label">VUELTA ACTUAL</div>
+        <div class="hud-value">1:32.847</div>
+        <div class="hud-label" style="margin-top:8px">MEJOR VUELTA</div>
+        <div class="hud-value hud-purple">1:31.824</div>
+      </div>
+      <div class="hud-block hud-telemetry">
+        <div class="hud-label">TELEMETRÍA</div>
+        <svg viewBox="0 0 120 40" class="tele-graph">
+          <polyline points="0,30 15,20 25,25 35,10 50,15 60,8 75,18 85,12 100,20 115,5 120,10" fill="none" stroke="#E040FB" stroke-width="1.5"/>
+          <polyline points="0,35 15,28 25,22 35,28 50,20 60,25 75,15 85,22 100,28 115,18 120,22" fill="none" stroke="#00E5FF" stroke-width="1.5"/>
+          <polyline points="0,25 15,35 25,30 35,20 50,30 60,18 75,28 85,8 100,15 115,25 120,30" fill="none" stroke="#69F0AE" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="hud-block hud-delta">
+        <div class="hud-label">DELTA</div>
+        <div class="hud-delta-value">-0.347</div>
+        <div class="hud-label" style="margin-top:8px">SECTOR 2</div>
+        <div class="hud-sectors">
+          <div class="sector s-green"></div>
+          <div class="sector s-green"></div>
+          <div class="sector s-purple"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-car-bg"></div>
+  </section>
+
+  <!-- ═══════════ ACADEMIA / PROGRAMS ═══════════ -->
+  <section class="programs section-light">
+    <div class="container">
+      <div class="programs-grid">
+        <div class="programs-intro">
+          <p class="eyebrow">ACADEMIA APEX</p>
+          <h2 class="section-title">UN PROGRAMA.<br />UN MÉTODO.<br />RESULTADOS.</h2>
+          <p class="section-desc">Cursos estructurados para cada etapa de tu desarrollo como piloto.</p>
+          <a href="#" class="link-arrow">VER PLAN ACADÉMICO →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-num" style="color:#00E5FF">01</div>
+          <div class="program-label" style="color:#00E5FF">FUNDAMENTOS</div>
+          <h3 class="program-name">NIVEL INICIAL</h3>
+          <ul class="program-features">
+            <li>⬤ 9 módulos</li>
+            <li>⬤ 10 horas</li>
+            <li>⬤ Certificación</li>
+          </ul>
+          <div class="program-img">🏎️</div>
+          <a href="#" class="link-arrow">VER PROGRAMA →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-num" style="color:#00E5FF">02</div>
+          <div class="program-label" style="color:#00E5FF">CONDUCCIÓN</div>
+          <h3 class="program-name">AVANZADA</h3>
+          <ul class="program-features">
+            <li>⬤ 12 módulos</li>
+            <li>⬤ 16 horas</li>
+            <li>⬤ Certificación</li>
+          </ul>
+          <div class="program-img">🚗</div>
+          <a href="#" class="link-arrow">VER PROGRAMA →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-num" style="color:#00E5FF">03</div>
+          <div class="program-label" style="color:#00E5FF">DATA &amp;</div>
+          <h3 class="program-name">TELEMETRÍA PRO</h3>
+          <ul class="program-features">
+            <li>⬤ 10 módulos</li>
+            <li>⬤ 12 horas</li>
+            <li>⬤ Certificación</li>
+          </ul>
+          <div class="program-img">📊</div>
+          <a href="#" class="link-arrow">VER PROGRAMA →</a>
+        </div>
+
+        <div class="program-card">
+          <div class="program-num" style="color:#00E5FF">04</div>
+          <div class="program-label" style="color:#00E5FF">PREPARACIÓN</div>
+          <h3 class="program-name">PROFESIONAL</h3>
+          <ul class="program-features">
+            <li>⬤ 8 módulos</li>
+            <li>⬤ Coaching 1 a 1</li>
+            <li>⬤ Plan personalizado</li>
+          </ul>
+          <div class="program-img">🏆</div>
+          <a href="#" class="link-arrow">VER PROGRAMA →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ DISCIPLINES ═══════════ -->
+  <section class="disciplines">
+    <div class="disciplines-inner">
+      <div class="disciplines-intro">
+        <h2>ENTRENÁ EN<br />TODAS LAS<br />DISCIPLINAS</h2>
+        <a href="#" class="link-arrow light">EXPLORAR DISCIPLINAS →</a>
+      </div>
+      <div class="disciplines-grid">
+        <div class="disc-card disc-f1">
+          <div class="disc-bg" style="background:linear-gradient(135deg,#111 60%,#1a0044)"></div>
+          <span class="disc-label">F1</span>
+          <div class="disc-underline" style="background:#00A8FF"></div>
+        </div>
+        <div class="disc-card disc-gt3">
+          <div class="disc-bg" style="background:linear-gradient(135deg,#111 50%,#002020)"></div>
+          <span class="disc-label">GT3</span>
+          <div class="disc-underline" style="background:#00E5FF"></div>
+        </div>
+        <div class="disc-card disc-rally">
+          <div class="disc-bg" style="background:linear-gradient(135deg,#111 50%,#200000)"></div>
+          <span class="disc-label">RALLY</span>
+          <div class="disc-underline" style="background:#FF3D00"></div>
+        </div>
+        <div class="disc-card disc-endurance">
+          <div class="disc-bg" style="background:linear-gradient(135deg,#111 50%,#002000)"></div>
+          <span class="disc-label">ENDURANCE</span>
+          <div class="disc-underline" style="background:#69F0AE"></div>
+        </div>
+        <div class="disc-card disc-turismo">
+          <div class="disc-bg" style="background:linear-gradient(135deg,#111 50%,#1a1a00)"></div>
+          <span class="disc-label">TURISMO<br />CARRETERA</span>
+          <div class="disc-underline" style="background:#FFD600"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HARDWARE ═══════════ -->
+  <section class="hardware">
+    <div class="container">
+      <div class="hardware-inner">
+        <div class="hardware-intro">
+          <h2>HARDWARE<br />PROFESIONAL</h2>
+          <p>Equipamiento idéntico al utilizado por pilotos profesionales.</p>
+          <a href="#" class="link-arrow light">VER EQUIPAMIENTO →</a>
+        </div>
+        <div class="hardware-brands">
+          <div class="brand-card">
+            <div class="brand-name">SIMUCUBE</div>
+            <div class="brand-tag">DIRECT DRIVE</div>
+            <div class="brand-icon">🎮</div>
+          </div>
+          <div class="brand-card">
+            <div class="brand-name">HEUSINKVELD</div>
+            <div class="brand-tag">PEDALES ULTIMATE+</div>
+            <div class="brand-icon">🦶</div>
+          </div>
+          <div class="brand-card">
+            <div class="brand-name">FANATEC</div>
+            <div class="brand-tag">COCKPITS DE ALUMINIO</div>
+            <div class="brand-icon">🪑</div>
+          </div>
+          <div class="brand-card">
+            <div class="brand-name">MOZA</div>
+            <div class="brand-tag">ACTUADORES 3DOF</div>
+            <div class="brand-icon">⚙️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ COMMUNITY ═══════════ -->
+  <section class="community">
+    <div class="community-inner">
+      <div class="community-text">
+        <h2>NO ENTRÁS SOLO.<br />ENTRÁS CON<br />OTROS QUE<br />QUIEREN GANAR.</h2>
+        <a href="#" class="link-arrow" style="color:#000">EUIMATE A LA COMUNIDAD →</a>
+        <div class="discord-badge">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.101 18.08.11 18.1.128 18.115a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          <span>discord</span>
+        </div>
+      </div>
+      <div class="community-photos">
+        <div class="photo-mosaic">
+          <div class="photo p1" style="background:#1a1a2e"></div>
+          <div class="photo p2" style="background:#16213e"></div>
+          <div class="photo p3" style="background:#0f3460"></div>
+          <div class="photo p4" style="background:#1a1a2e"></div>
+          <div class="photo p5" style="background:#16213e"></div>
+          <div class="photo-note">Aquí<br />empezaron<br />juntos. ✌</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ COMPETITIONS ═══════════ -->
+  <section class="competitions section-light">
+    <div class="container">
+      <div class="competitions-grid">
+
+        <div class="comp-intro">
+          <h2>COMPETENCIAS<br />APEX</h2>
+          <p>Competí. Medite. Crecé.<br />En ligas oficiales con<br />estructura profesional.</p>
+          <a href="#" class="link-arrow">VER COMPETENCIAS →</a>
+        </div>
+
+        <div class="comp-standings">
+          <div class="standings-header">
+            <span class="standings-title">APEX CHAMPIONSHIP</span>
+            <span class="standings-season">TEMPORADA 2024</span>
+          </div>
+          <table class="standings-table">
+            <tr><td class="pos">1</td><td class="driver">M. ALONSO</td><td class="pts">312 PTS</td></tr>
+            <tr><td class="pos">2</td><td class="driver">F. BARRIOS</td><td class="pts">287 PTS</td></tr>
+            <tr><td class="pos">3</td><td class="driver">L. SANCHEZ</td><td class="pts">265 PTS</td></tr>
+            <tr><td class="pos">4</td><td class="driver">T. CORREA</td><td class="pts">241 PTS</td></tr>
+            <tr><td class="pos">5</td><td class="driver">J. VILLALBA</td><td class="pts">210 PTS</td></tr>
+          </table>
+          <a href="#" class="link-arrow">VER RANKING COMPLETO →</a>
+        </div>
+
+        <div class="comp-next">
+          <div class="next-header">
+            <span>PRÓXIMA FECHA</span>
+            <span class="next-race">ROUND 4 · MONZA</span>
+          </div>
+          <div class="track-map">
+            <svg viewBox="0 0 160 120" class="track-svg">
+              <!-- Simplified Monza track outline -->
+              <path d="M20,60 Q30,20 80,15 Q130,10 145,40 Q160,70 140,90 Q120,110 80,105 Q40,100 20,60Z" fill="none" stroke="#00E5FF" stroke-width="3" stroke-dasharray="5,3"/>
+              <circle cx="20" cy="60" r="4" fill="#FF3D00"/>
+            </svg>
+          </div>
+          <div class="next-date">25 MAYO 2024</div>
+          <a href="#" class="btn btn-outline-sm">INSCRIBIRSE →</a>
+        </div>
+
+        <div class="comp-leagues">
+          <div class="leagues-title">LIGAS ACTIVAS</div>
+          <div class="league-item">
+            <div class="league-icon">🏆</div>
+            <div>
+              <div class="league-name">APEX CHAMPIONSHIP</div>
+              <div class="league-class">MULTICLASE</div>
+            </div>
+          </div>
+          <div class="league-item">
+            <div class="league-icon">🥈</div>
+            <div>
+              <div class="league-name">APEX GT3 LEAGUE</div>
+              <div class="league-class">PRO / AM</div>
+            </div>
+          </div>
+          <div class="league-item">
+            <div class="league-icon">🥉</div>
+            <div>
+              <div class="league-name">APEX ROOKIE CUP</div>
+              <div class="league-class">NIVEL INICIAL</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SIM TO REAL ═══════════ -->
+  <section class="sim-to-real section-light">
+    <div class="container">
+      <div class="str-grid">
+        <div class="str-left">
+          <h2>DE SIM RACER<br />A PILOTO REAL.</h2>
+        </div>
+        <div class="str-profile">
+          <div class="driver-photo-placeholder">
+            <div class="driver-silhouette">👨‍🏎️</div>
+          </div>
+          <div class="driver-info">
+            <div class="driver-name">FRANCO COLAPINTO</div>
+            <div class="driver-title">XEMIRO APEX 2021 – 2023</div>
+            <ul class="driver-achievements">
+              <li>✦ Campeón Apex Championship 2022</li>
+              <li>✦ Programa Road To 2027</li>
+              <li>✦ Pruebas en F3 – 2024</li>
+              <li>✦ Contrato F3 – 2025</li>
+            </ul>
+            <a href="#" class="link-arrow">CONOCÉ SU HISTORIA →</a>
+          </div>
+        </div>
+        <div class="str-road">
+          <h3>ROAD TO 2027</h3>
+          <p>El camino hacia el automovilismo profesional. Formación, oportunidades y conexiones para llegar más lejos.</p>
+          <a href="#" class="link-arrow">CONOCÉ EL PROGRAMA →</a>
+        </div>
+        <div class="str-year">2027</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EMPRESAS + NOTICIAS ═══════════ -->
+  <section class="empresas-noticias section-light">
+    <div class="container">
+      <div class="en-grid">
+
+        <div class="empresas-col">
+          <h2>PARA<br />EMPRESAS</h2>
+          <div class="empresas-icons">
+            <div class="emp-item">
+              <div class="emp-icon">⭐</div>
+              <span>ACTIVACIONES<br />DE MARCA</span>
+            </div>
+            <div class="emp-item">
+              <div class="emp-icon">👥</div>
+              <span>TEAM<br />BUILDING</span>
+            </div>
+            <div class="emp-item">
+              <div class="emp-icon">✈️</div>
+              <span>LANZAMIENTOS</span>
+            </div>
+            <div class="emp-item">
+              <div class="emp-icon">🏢</div>
+              <span>EVENTOS<br />CORPORATIVOS</span>
+            </div>
+          </div>
+          <a href="#" class="link-arrow">VER SOLUCIONES B2B →</a>
+        </div>
+
+        <div class="noticias-col">
+          <div class="noticias-header">
+            <h2>NOTICIAS</h2>
+            <a href="#" class="link-arrow">VER TODAS →</a>
+          </div>
+          <div class="noticias-grid">
+            <div class="noticia-featured">
+              <div class="noticia-bg" style="background:linear-gradient(135deg,#1a0044,#4a0080)">
+                <div class="noticia-tag tag-eventos">EVENTOS</div>
+              </div>
+              <h3>APEX RACING NIGHT: UNA NOCHE INOLVIDABLE</h3>
+              <a href="#" class="link-arrow">LEER MÁS →</a>
+            </div>
+            <div class="noticias-side">
+              <div class="noticia-small">
+                <span class="noticia-tag tag-academia">ACADEMIA</span>
+                <p>NUEVO PROGRAMA DE COACHING 2024</p>
+                <a href="#" class="link-arrow">LEER MÁS →</a>
+              </div>
+              <div class="noticia-small">
+                <span class="noticia-tag tag-esport">ESPORT</span>
+                <p>RESULTADOS: LIGA INTERLOCAL APEX</p>
+                <a href="#" class="link-arrow">LEER MÁS →</a>
+              </div>
+              <div class="noticia-small">
+                <span class="noticia-tag tag-tecnologia">TECNOLOGÍA</span>
+                <p>NUEVOS SIMULADORES PROFESIONALES</p>
+                <a href="#" class="link-arrow">LEER MÁS →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ NEWSLETTER ═══════════ -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h2>NO TE PIERDAS NADA.<br />SÉ PARTE DE LO QUE VIENE.</h2>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Tu email" class="nl-input" />
+        <button class="btn btn-cta">QUIERO ESTAR AL DÍA</button>
+      </div>
+      <div class="nl-astronaut">🚀</div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-apex footer-logo-text">APEX</span>
+          <span class="logo-sub">SIM RACING</span>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>ACADEMIA</h4>
+          <a href="#">Cursos</a>
+          <a href="#">Coaching</a>
+          <a href="#">Ligas &amp; Torneos</a>
+          <a href="#">Metodología</a>
+          <a href="#">Road To 2027</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>EXPERIENCIAS</h4>
+          <a href="#">Simuladores</a>
+          <a href="#">Ligas &amp; Torneos</a>
+          <a href="#">Activaciones</a>
+          <a href="#">Eventos</a>
+          <a href="#">Calendario</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>EMPRESAS</h4>
+          <a href="#">Soluciones B2B</a>
+          <a href="#">Activaciones</a>
+          <a href="#">Team Building</a>
+          <a href="#">Alquier de Sims</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>APEX</h4>
+          <a href="#">Nosotros</a>
+          <a href="#">Noticias</a>
+          <a href="#">Contacto</a>
+          <a href="#">Trabajá con nosotros</a>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>¿HABLAMOS?</h4>
+          <a href="tel:+541123456789">+54 11 2234 5679</a>
+          <a href="mailto:hola@apexsimracing.com">hola@apexsimracing.com</a>
+          <a href="#" class="btn btn-contact">CONTACTANOS</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2024 APEX SIM RACING. TODOS LOS DERECHOS RESERVADOS.</span>
+        <div class="footer-legal">
+          <a href="#">TÉRMINOS Y CONDICIONES</a>
+          <a href="#">POLÍTICA DE PRIVACIDAD</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

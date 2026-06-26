@@ -10,7 +10,7 @@
   --border:   rgba(255,255,255,0.08);
   --border2:  rgba(255,255,255,0.14);
   --white:    #ffffff;
-  --muted:    rgba(255,255,255,0.45);
+  --muted:    rgba(255, 255, 255, 0.86);
   --muted2:   rgba(255,255,255,0.25);
 
   --cyan:     #00E5FF;
@@ -18,7 +18,8 @@
   --red:      #FF3D00;
   --yellow:   #FFD600;
   --green:    #69F0AE;
-  --lime:     #CCFF00;
+  --pink:     #B5005A;
+  --crema:    #f2eeed;
 
   --font:     'Space Grotesk', sans-serif;
   --mono:     'Space Mono', monospace;
@@ -606,7 +607,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ═══ ACADEMIA ═══ */
-.academia-section { background: var(--bg); }
+.academia-section { background: var(--bg3); }
 
 .section-header {
   margin-bottom: 60px;
@@ -642,7 +643,7 @@ img { display: block; max-width: 100%; }
   margin-bottom: 8px;
   transition: color 0.3s;
 }
-.program-card:hover .card-num { color: rgba(255,255,255,0.08); }
+.program-card:hover .card-num { color: rgba(249, 245, 245, 0.858); }
 
 .card-tag {
   font-family: var(--mono);
@@ -756,15 +757,27 @@ img { display: block; max-width: 100%; }
 
 .disc-scroll-area {
   flex: 1;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-  /* prevent the area from shrinking behind the sticky panel */
+  overflow: hidden;          /* hidden — JS drives scrollLeft, no native scrollbar */
   min-width: 0;
+  cursor: none;              /* custom cursor handles it */
+  position: relative;
 }
-.disc-scroll-area:active { cursor: grabbing; }
+/* scrollbar hidden for any fallback */
 .disc-scroll-area::-webkit-scrollbar { display: none; }
+
+/* ── Mobile: re-enable native touch scroll ── */
+@media (pointer: coarse) {
+  .disc-scroll-area {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    cursor: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .disc-card {
+    scroll-snap-align: start;
+  }
+}
 
 .disc-cards-row {
   display: flex;
@@ -899,7 +912,10 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: flex-start;
   overflow: hidden;
+  transition: background 0.4s;
 }
+.hw-brand:hover { background: var(--bg3); }
+.hw-brand:hover .hw-brand-line { transform: scaleX(1); }
 
 .hw-brand-inner { 
   position: relative;
@@ -912,10 +928,11 @@ img { display: block; max-width: 100%; }
 
 .hw-brand img{
     width:100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 3; /* misma proporción en las 4, sin importar la foto original */
     object-fit: cover;
     display:block;
     margin:28px 0;
+    transition:.45s ease;
 }
 
 .hw-brand-name {
@@ -938,12 +955,19 @@ img { display: block; max-width: 100%; }
 }
 
 .hw-brand-line {
-  display: none;
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
 }
 
 /* ═══ COMMUNITY ═══ */
 .community-section {
-  background: var(--lime);
+  background: var(--crema);
   padding: 100px 0;
   display: grid;
   grid-template-columns: 500px 1fr;

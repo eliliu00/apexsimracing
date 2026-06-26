@@ -643,7 +643,7 @@ img { display: block; max-width: 100%; }
   margin-bottom: 8px;
   transition: color 0.3s;
 }
-.program-card:hover .card-num { color: rgba(249, 245, 245, 0.858); }
+.program-card:hover .card-num { color: var(--crema); }
 
 .card-tag {
   font-family: var(--mono);
